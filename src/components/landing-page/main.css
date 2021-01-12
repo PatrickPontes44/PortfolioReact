@@ -1,0 +1,122 @@
+main{
+    width: 100%;
+    height: 65vh;
+}
+
+main .main-section-landing{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background-color: #111;
+    position: relative;
+    z-index: 2;
+}
+.main-section-landing video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .8;
+}
+
+
+.main-section-landing .main-section-myInfo, 
+.main-section-landing .main-section-buttons{
+    width: 80%;
+    display: flex;
+    z-index: 999;
+}
+.main-section-landing .main-section-myInfo{
+    flex-direction: column;
+    gap: .5rem;
+}
+.main-section-buttons{
+    gap: 1.5rem;
+}
+
+
+.main-section-myInfo h1, .main-section-myInfo h2{
+    color: #fff;
+}
+
+.main-section-buttons a{
+    border: none;
+    padding: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.3);
+    transition: color ease-in-out .3s, background-color ease-in-out .3s;
+    outline: none;
+}
+.main-section-buttons a:hover{
+    cursor: pointer;
+}
+.main-section-buttons a:active{
+    opacity: .9;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.main-section-buttons #btn-curriculo{
+    background-color: #2e86de;
+}
+.main-section-buttons #btn-curriculo:hover{
+    background-color: #2874c0;
+    
+}
+.main-section-buttons #btn-projetos,
+.main-section-buttons #btn-github
+{
+    background-color: #01a3a4;
+}
+.main-section-buttons #btn-projetos:hover,
+.main-section-buttons #btn-github:hover
+{
+    background-color: #008f8f;
+}
+
+.main-section-about{
+    width: 80%;
+    max-width: 1100px;
+    margin: 10rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+}
+.main-section-about p{
+    font-weight: bold;
+}
+.main-section-about .image-container{
+    max-width: 40%;
+}
+
+
+@media only screen and (max-width: 768px){
+    .main-section-landing .main-section-myInfo{
+        text-align: center;
+    }
+    .main-section-buttons{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-section-buttons button{
+        font-size: 1.5rem;
+    }
+    .main-section-about{
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .main-section-about .image-container{
+        max-width: 50%;
+    }
+}
