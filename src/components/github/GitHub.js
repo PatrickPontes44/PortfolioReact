@@ -7,7 +7,6 @@ export const GitHub = () =>{
     const getRepos = async()=>{
         const response = await fetch('https://api.github.com/users/PatrickPontes44/repos');
         const repos = await response.json();
-        console.log(repos)
         setGithubData(repos);
     }
     useEffect(() => {
