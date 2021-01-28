@@ -7,6 +7,7 @@ export const GitHub = () =>{
     const getRepos = async()=>{
         const response = await fetch('https://api.github.com/users/PatrickPontes44/repos');
         const repos = await response.json();
+        console.log(repos)
         setGithubData(repos);
     }
     useEffect(() => {
@@ -24,7 +25,7 @@ export const GitHub = () =>{
                         <div className='project' key={item.id}>
                             <h3>{item.name}</h3>
                             <p className={item.description ? '':'no-desc'}>{item.description ? item.description:'Sem descrição'}</p>
-                            <a href={item.url} target="_blank" rel="noreferrer">Acessar Repositório</a>
+                            <a href={item.html_url} target="_blank" rel="noreferrer">Acessar Repositório</a>
                         </div>
                         )
                     })
