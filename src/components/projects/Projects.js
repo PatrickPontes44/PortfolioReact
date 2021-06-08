@@ -11,13 +11,13 @@ const projects = [
         id: 1,
         name: "Rolex Landing Page",
         url: "https://patrickpontes44.github.io/RolexLandingPage/",
-        img: barber
+        img: rolex
     },
     {
         id: 2,
         name: "Barber Shop Landing Page",
         url: "https://patrickpontes44.github.io/barbearia-landingpage/",
-        img: rolex
+        img: barber
     },
     {
         id: 3,
