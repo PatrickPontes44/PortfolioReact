@@ -2,6 +2,7 @@ import './main.css';
 import barber from '../../images/projects/barbershop.PNG';
 import rolex from '../../images/projects/rolex.PNG';
 import pixage from '../../images/projects/pixage.PNG';
+import trainer from '../../images/projects/trainer.PNG';
 
 
 
@@ -11,19 +12,25 @@ const projects = [
         id: 1,
         name: "Rolex Landing Page",
         url: "https://patrickpontes44.github.io/RolexLandingPage/",
-        img: barber
+        img: rolex
     },
     {
         id: 2,
         name: "Barber Shop Landing Page",
         url: "https://patrickpontes44.github.io/barbearia-landingpage/",
-        img: rolex
+        img: barber
     },
     {
         id: 3,
         name: "Image Gallery",
         url: "https://patrickpontes44.github.io/Pixage/",
         img: pixage
+    },
+    {
+        id: 4,
+        name: "English Trainer",
+        url: "https://patrickpontes44.github.io/english-trainer/",
+        img: trainer
     }
 ]
 

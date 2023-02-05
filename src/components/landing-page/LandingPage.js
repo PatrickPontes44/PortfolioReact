@@ -4,12 +4,17 @@ import background from '../../images/bg.mp4';
 import mern from '../../images/mern.png';
 
 const words = ['Web Developer', 'HTML, CSS, JavaScript, Node.JS, React.JS', 'Web Developer'];
+const words2 = ['Que legal, ', 'eu também moro em Curitiba.'];
 
 export const LandingPage = ()=>{
     const [index, setIndex] = useState(0);
     const [subIndex, setSubIndex] = useState(0);
     const [blink, setBlink] = useState(true);
     const [reverse, setReverse] = useState(false);
+    const [user, setUser] = useState(undefined);
+    useEffect(() => {
+        getUserLocation()
+    }, [])
 
     useEffect(() => {
         const timeout2 = setTimeout(()=>{
@@ -39,6 +44,16 @@ export const LandingPage = ()=>{
         return () => clearTimeout(timeout);
     }, [subIndex,index, reverse]);
 
+
+    const getUserLocation = async ()=>{
+        const response = await fetch('https://geolocation-db.com/json/');
+        if(response.status == 200){
+            const data = await response.json()
+            console.log(data)
+            setUser(data)
+        }
+    }
+
     return(
         <main>
             <section className="main-section-landing">
@@ -46,11 +61,18 @@ export const LandingPage = ()=>{
                 <div className="main-section-myInfo">
                     <h1>Patrick Pontes</h1>
                     <h2>{`${words[index].substring(0, subIndex)}${blink ? "|" : ""}`}</h2>
+                    {
+                        user ?
+                        <h3>Que legal, você é de { user?.city }. É uma cidade muito bacana!</h3>
+                        :
+                        null
+        
+                    }
                 </div>
                 <div className="main-section-buttons">
-                    <a href="#" id="btn-curriculo">Curriculo</a>
+                    <a href="/docs/Patrick Potes - CV.pdf" id="btn-curriculo" download="Patrick Pontes CV">Curriculo</a>
                     <a href="#Projects" id="btn-projetos">Meus Projetos</a>
-                    <a href="#GitHub" id="btn-github">GitHub</a>
+                    <a href="https://github.com/PatrickPontes44" id="btn-github" target="_blank">GitHub</a>
                 </div>
             </section>
         </main>
@@ -60,7 +82,7 @@ export const LandingPage = ()=>{
 export const About = ()=>{
     return(
         <section className="main-section-about">
-            <p>Desenvolvedor Web Júnior, com foco em frontend. Atualmente ampliando meus conhecimentos em Mongo, Express, React e Node. Também curto muito aprender sobre cyber security.</p>
+            <p>Desenvolvedor Web Júnior, com foco em frontend. Trabalho com tecnologias como React.js, Vue.js, Figma, Material UI, Sass, Bootstrap e I18next. Também curto muito aprender sobre cyber security.</p>
             <div className="image-container">
                 <img src={mern} alt="mern stack png" />
             </div>
